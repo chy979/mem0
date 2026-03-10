@@ -31,8 +31,8 @@ MEMGRAPH_USERNAME = os.environ.get("MEMGRAPH_USERNAME", "memgraph")
 MEMGRAPH_PASSWORD = os.environ.get("MEMGRAPH_PASSWORD", "mem0graph")
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-MODEL_NAME = os.environ.get("MODEL_NAME")
-OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "glm-4-7")
+MODEL_NAME = os.environ.get("MODEL_NAME", "glm-4-7")
+OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL")
 HISTORY_DB_PATH = os.environ.get("HISTORY_DB_PATH", "/app/history/history.db")
 
 DEFAULT_CONFIG = {
@@ -52,7 +52,7 @@ DEFAULT_CONFIG = {
         "provider": "openai",
         "config": {
             "api_key": OPENAI_API_KEY,
-            "base_url": OPENAI_BASE_URL,
+            "openai_base_url": OPENAI_BASE_URL,
             "temperature": 0.2,
             "model": MODEL_NAME,
         },
@@ -61,7 +61,7 @@ DEFAULT_CONFIG = {
         "provider": "openai",
         "config": {
             "api_key": OPENAI_API_KEY,
-            "base_url": OPENAI_BASE_URL,
+            "openai_base_url": OPENAI_BASE_URL,
             "model": "text-embedding-3-small",
         },
     },
